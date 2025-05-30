@@ -103,14 +103,21 @@ public class EVALUACIONTRANSVERSAL {
         mostrarDisponibilidad();
         
         String asientoSel;
-        System.out.println("Ingrese el asiento que quiere seleccionar");
-        asientoSel = sc.nextLine().toUpperCase();                 
-        if (asientosDisponibles.contains(asientoSel)) {
-            entrada1.add(2,"Asiento: " + asientoSel);
-            asientosDisponibles.remove(asientoSel); 
-            System.out.println("Asiento correctamente reservado: " + asientoSel);
-        } else {
-            System.out.println("Asiento no disponible o inexistente.");
+
+        
+        while(true){
+            
+            System.out.println("Ingrese el asiento que quiere seleccionar");
+            asientoSel = sc.nextLine().toUpperCase();
+            if (asientosDisponibles.contains(asientoSel)) {
+                entrada1.add(2,"Asiento: " + asientoSel);
+                asientosDisponibles.remove(asientoSel); 
+                System.out.println("Asiento correctamente reservado: " + asientoSel);
+                break;
+            } else {
+                System.out.println("Asiento no disponible o inexistente.");
+                continue;
+            }
         }
         
         System.out.println("Ingrese su nombre: ");
@@ -173,15 +180,19 @@ public class EVALUACIONTRANSVERSAL {
                     mostrarDisponibilidad();
                     
                     String asientoSelDos;
-                    System.out.println("Seleccione su asiento: ");
-                    asientoSelDos = sc.nextLine().toUpperCase();
-                    if (asientosDisponibles.contains(asientoSelDos)) {
-                        entrada2.add(2, "Asiento: " + asientoSelDos);
-                        asientosDisponibles.remove(asientoSelDos); 
-                        System.out.println("Asiento correctamente reservado: " + asientoSelDos);
-                    } else {
-                        System.out.println("Asiento no disponible o inexistente.");
-                    }        
+                    
+                    while (true){
+                        System.out.println("Seleccione su asiento: ");
+                        asientoSelDos = sc.nextLine().toUpperCase();
+                        if (asientosDisponibles.contains(asientoSelDos)) {
+                            entrada2.add(2, "Asiento: " + asientoSelDos);
+                            asientosDisponibles.remove(asientoSelDos); 
+                            System.out.println("Asiento correctamente reservado: " + asientoSelDos);
+                            break;
+                        } else {
+                            System.out.println("Asiento no disponible o inexistente.");
+                        }        
+                    }
 
 
                     System.out.println("Ingrese su nombre: ");
