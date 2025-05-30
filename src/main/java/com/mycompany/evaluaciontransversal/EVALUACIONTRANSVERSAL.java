@@ -353,6 +353,8 @@ public class EVALUACIONTRANSVERSAL {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
+        System.out.println("Hola mundo");
+        
         completarasientos();
         
         int variable = -1;
